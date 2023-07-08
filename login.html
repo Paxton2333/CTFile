@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <link rel="icon" href="ct.jpg">
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    h1 {
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    form {
+      width: 300px;
+      margin-top: 20px;
+    }
+    label {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .login-button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    .login-button:hover {
+      background-color: #0056b3;
+    }
+    .error-message {
+      color: red;
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Login</h1>
+    <form id="login-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" required>
+      <button type="submit" class="login-button">Login</button>
+      <p id="error-message" class="error-message"></p>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('login-form');
+    const errorMessage = document.getElementById('error-message');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      // Get the entered username and password
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Check if the username and password are correct
+      const isValidCredentials = checkCredentials(username, password);
+      if (isValidCredentials) {
+        // Redirect to the authenticated page (files.html)
+        window.location.href = 'files.html';
+      } else {
+        errorMessage.textContent = 'Username or Password are incorrect!';
+      }
+
+      // Clear the form fields
+      document.getElementById('username').value = '';
+      document.getElementById('password').value = '';
+    });
+
+    function checkCredentials(username, password) {
+      // Compare the entered username and password with valid credentials
+      return (
+        (username === 'Paxton233' && password === '114514') ||
+        (username === 'G_123' && password === '01000111') ||
+        (username === 'Pr1nst0n' && password === 'sch4rfer')
+      );
+    }
+  </script>
+</body>
+</html>
