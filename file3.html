@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The 『GOD』 Incident - TOP SECRET</title>
+  <link rel="icon" href="ct.jpg">
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      text-indent: 30px;
+    }
+    .hidden {
+      display: none;
+    }
+    .tickbox-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .tickbox {
+      margin-right: 10px;
+    }
+    .reveal-button {
+      display: none;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    .reveal-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <script>
+    function toggleButtonVisibility() {
+      var tickbox = document.getElementById("tickbox");
+      var revealButton = document.getElementById("revealButton");
+      
+      if (tickbox.checked) {
+        revealButton.style.display = "block";
+      } else {
+        revealButton.style.display = "none";
+      }
+    }
+    
+    function revealFile() {
+      document.getElementById("fileContent").classList.remove("hidden");
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>The 『GOD』 Incident - TOP SECRET</h1>
+    <p>Title: The 『GOD』 Incident</p>
+    <p>Type: File</p>
+    <p>Level: TOP SECRET</p>
+    <p>Status: LOCKED</p>
+    <br>
+    <div class="tickbox-container">
+      <input type="checkbox" id="tickbox" class="tickbox" onchange="toggleButtonVisibility()">
+      <label for="tickbox">I confirm that I have proper authorization to access this file.</label>
+    </div>
+    <button id="revealButton" class="reveal-button" onclick="revealFile()">Reveal File</button>
+    <div id="fileContent" class="hidden">
+      <p>This TOP SECRET file contains information related to the enigmatic 『GOD』 incident. Please be aware that access to this file is restricted and requires proper authorization.</p>
+      <p>The 『GOD』 is a groundbreaking science experiment made by our esteemed scientist, Dr. G. However, following Dr. G's disconnection and subsequent disappearance, the experiment went awry and became uncontrollable.</p>
+      <p>Despite our best efforts, we have been unable to locate the whereabouts of the 『GOD』 entity. It possesses an inherent ability to manipulate reality, resulting in its frequent and unpredictable vanishing acts.</p>
+      <p>The true nature and potential of the 『GOD』 entity remain a mystery. It presents a significant risk to both our organization and the general populace due to its extraordinary capabilities and the potential repercussions of its uncontrolled actions.</p>
+      <p>Specialized containment measures have been implemented to mitigate the threat posed by the 『GOD』 entity. However, due to the highly sensitive and volatile nature of the situation, information pertaining to these measures is not disclosed in this file.</p>
+      <p>Access to this file is granted solely to individuals with the appropriate clearance level and a demonstrated need-to-know. Unauthorized access, dissemination, or disclosure of the information contained herein is strictly prohibited and may result in severe consequences.</p>
+      <p>Further investigation and efforts are underway to locate and reestablish control over the 『GOD』 entity. We remain committed to resolving this incident and preventing any potential catastrophic consequences that may arise from its continued existence.</p>
+      <p class="top-secret">END OF FILE</p>
+    </div>
+  </div>
+</body>
+</html>
