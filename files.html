@@ -34,6 +34,27 @@
     .file-button:hover {
       background-color: #0056b3;
     }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .page-link {
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      margin: 0 5px;
+    }
+    .page-link:hover {
+      background-color: #0056b3;
+    }
+    .active {
+      background-color: #0056b3;
+    }
   </style>
 </head>
 <body>
@@ -49,11 +70,44 @@
     <button class="file-button" onclick="openFile('file8.html')">File 8</button>
     <button class="file-button" onclick="openFile('file9.html')">File 9</button>
     <button class="file-button" onclick="openFile('file10.html')">File 10</button>
+
+    <div class="pagination">
+      <button class="page-link" onclick="changePage(1)">1</button>
+      <button class="page-link" onclick="changePage(2)">2</button>
+      <button class="page-link" onclick="changePage(3)">3</button>
+      <button class="page-link" onclick="changePage(4)">4</button>
+      <button class="page-link" onclick="changePage(5)">5</button>
+    </div>
   </div>
 
   <script>
     function openFile(filename) {
       window.location.href = filename;
+    }
+
+    function changePage(page) {
+      // Calculate the starting file number for the given page
+      var startFile = (page - 1) * 10 + 1;
+
+      // Generate the filenames for the current page
+      var filenames = [];
+      for (var i = startFile; i <= startFile + 9; i++) {
+        filenames.push("file" + i + ".html");
+      }
+
+      // Update the file buttons with the new filenames
+      var fileButtons = document.getElementsByClassName("file-button");
+      for (var j = 0; j < fileButtons.length; j++) {
+        fileButtons[j].innerHTML = "File " + (startFile + j);
+        fileButtons[j].setAttribute("onclick", "openFile('" + filenames[j] + "')");
+      }
+
+      // Update the active page link
+      var pageLinks = document.getElementsByClassName("page-link");
+      for (var k = 0; k < pageLinks.length; k++) {
+        pageLinks[k].classList.remove("active");
+      }
+      pageLinks[page - 1].classList.add("active");
     }
   </script>
 </body>
