@@ -56,20 +56,26 @@
     }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+  <script>
+    // JavaScript code to create the eye elements and position them randomly on the page
+    document.addEventListener("DOMContentLoaded", function() {
+      var eyeBackground = document.querySelector(".eye-background");
+      var bodyWidth = document.body.offsetWidth;
+      var bodyHeight = document.body.offsetHeight;
+      var eyeCount = 100; // Adjust the number of eyes as desired
+
+      for (var i = 0; i < eyeCount; i++) {
+        var eye = document.createElement("div");
+        eye.className = "eye";
+        eye.style.top = Math.floor(Math.random() * bodyHeight) + "px";
+        eye.style.left = Math.floor(Math.random() * bodyWidth) + "px";
+        eyeBackground.appendChild(eye);
+      }
+    });
+  </script>
 </head>
 <body>
-  <div class="eye-background">
-    <div class="eye" style="top: 100px; left: 100px;"></div>
-    <div class="eye" style="top: 200px; left: 300px;"></div>
-    <div class="eye" style="top: 300px; left: 500px;"></div>
-    <div class="eye" style="top: 400px; left: 700px;"></div>
-    <div class="eye" style="top: 500px; left: 900px;"></div>
-    <div class="eye" style="top: 600px; left: 1100px;"></div>
-    <div class="eye" style="top: 700px; left: 1300px;"></div>
-    <div class="eye" style="top: 800px; left: 1500px;"></div>
-    <div class="eye" style="top: 900px; left: 1700px;"></div>
-    <div class="eye" style="top: 1000px; left: 1900px;"></div>
-  </div>
+  <div class="eye-background"></div>
 
   <div class="container">
     <h1>ERROR 333</h1>
