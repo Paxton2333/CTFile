@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Puzzle Verification</title>
+</head>
+<body>
+  <script>
+    function verifyPuzzle() {
+      var input = document.getElementById("puzzleInput").value;
+      var correctAnswer = "open sesame"; // Change this to the correct puzzle answer
+
+      if (input === correctAnswer) {
+        // Correct puzzle answer, show the file
+        window.location.href = "file.html"; // Change this to the URL of the file you want to display
+      } else {
+        // Incorrect puzzle answer, redirect back to files.html
+        window.location.href = "files.html"; // Change this to the URL of the files.html page
+      }
+    }
+  </script>
+
+  <h1>Puzzle Verification</h1>
+  <p>Please solve the puzzle to access the file:</p>
+  <p>Puzzle: What is the secret phrase?</p>
+  <input type="text" id="puzzleInput" placeholder="Enter the answer">
+  <button onclick="verifyPuzzle()">Submit</button>
+</body>
+</html>
