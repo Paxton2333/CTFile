@@ -30,6 +30,7 @@
         .glitch {
             font-size: 1.2rem;
             animation: glitch 0.1s infinite;
+            cursor: pointer;
         }
         @keyframes glitch {
             2%, 64% {
@@ -45,13 +46,33 @@
     </style>
 </head>
 <body>
-    <h1 class="glitch">666.html</h1>
+    <h1 class="glitch">666</h1>
     <div class="content">
         <p>Welcome to the void.</p>
         <p>You've stumbled upon something that should not exist.</p>
         <p>There are whispers in the darkness, echoes of a forbidden knowledge.</p>
         <p>Beware, for this path leads to madness.</p>
-        <p class="glitch">Do you dare continue?</p>
+        <p class="glitch" id="continue-text" onclick="changeText()">Do you dare continue?</p>
     </div>
+
+    <script>
+        const glitchText = ["Failure", "Trespassing", "Death", "Unknown", "Doomsday", "Losing", "Fearness"];
+        let isGlitched = false;
+
+        function changeText() {
+            const continueText = document.getElementById("continue-text");
+
+            if (!isGlitched) {
+                isGlitched = true;
+                continueText.classList.remove("glitch");
+                continueText.textContent = getRandomText();
+            }
+        }
+
+        function getRandomText() {
+            const randomIndex = Math.floor(Math.random() * glitchText.length);
+            return glitchText[randomIndex];
+        }
+    </script>
 </body>
 </html>
