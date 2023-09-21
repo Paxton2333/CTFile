@@ -103,7 +103,7 @@
     <section>
         <h2>Files on this Page</h2>
         <ul>
-             <li><a class="file-button" href="galaxyunion.html">About Galaxy Union</a></li>
+            <li><a class="file-button" href="galaxyunion.html">About Galaxy Union</a></li>
             <li><a class="file-button" href="universalclub.html">About Universal Club</a></li>
             <li><a class="file-button" href="dakasi.html">About DAKASI</a></li>
             <li><a class="file-button" href="universeempire.html">About Universe Empire</a></li>
@@ -111,13 +111,15 @@
             <li><a class="file-button" href="rdg.html">About Red Dust Group</a></li>
             <li><a class="file-button" href="ct.html">About Cosmosphere Taskforce</a></li>
             <li><a class="file-button" href="tco.html">About The Chosen One</a></li>
-            <li><a class="file-button" href="so.html">About Stardust Organization </a></li>
-            <li><a class="file-button" href="bs.html">About The Blade Shadows </a></li>
-            <li><a class="file-button" href="bsp.html">About The Black Serpent </a></li>
-            <li><a class="file-button" href="c.html">About Chaos </a></li>
-            <li><a class="file-button" href="333.html">About 333 </a></li>
-            <li><a class="file-button" href="cultivator.html">About The Cultivators </a></li>
+            <li><a class="file-button" href="so.html">About Stardust Organization</a></li>
+            <li><a class="file-button" href="bs.html">About The Blade Shadows</a></li>
+            <li><a class="file-button" href="bsp.html">About The Black Serpent</a></li>
+            <li><a class="file-button" href="c.html">About Chaos</a></li>
+            <li><a class="file-button" href="333.html">About 333</a></li>
+            <li><a class="file-button" href="cultivator.html">About The Cultivators</a></li>
         </ul>
+        <h2>Page System</h2>
+        <button class="file-button" onclick="loadPage2()">Page 2</button>
     </section>
     <footer>
         &copy; Cosmosphere Taskforce, 2023
@@ -143,6 +145,10 @@
             } else if (userInput.toUpperCase() === "N") {
                 closePopup();
             }
+        }
+
+        function loadPage2() {
+            window.location.href = "bt.html";
         }
     </script>
 </body>
