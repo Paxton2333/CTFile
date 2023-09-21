@@ -124,7 +124,17 @@
                     button.style.display = "inline-block";
                 });
             } else {
-                // For page 1 or other pages, do nothing.
+                // Show file buttons of page 1
+                var fileButtonsPage1 = document.querySelectorAll(".file-button");
+                fileButtonsPage1.forEach(function(button) {
+                    button.style.display = "inline-block";
+                });
+
+                // Hide file buttons of page 2
+                var fileButtonsPage2 = document.querySelectorAll(".file-button-page2");
+                fileButtonsPage2.forEach(function(button) {
+                    button.style.display = "none";
+                });
             }
         }
     </script>
