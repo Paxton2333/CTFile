@@ -123,28 +123,5 @@
     <footer>
         &copy; Cosmosphere Taskforce, 2023
     </footer>
-
-    <!-- Pop-up dialog container -->
-    <div id="popup-container">
-        <div id="popup-box">
-            <p>Do you want to proceed? (Y/N)</p>
-            <input type="text" id="popup-input">
-            <br>
-            <button onclick="proceed()">OK</button>
-            <button onclick="closePopup()">Cancel</button>
-        </div>
-    </div>
-
-    <script>
-        function proceed() {
-            var userInput = document.getElementById("popup-input").value;
-            if (userInput.toUpperCase() === "Y") {
-                window.open("666.html", "_blank");
-                closePopup();
-            } else if (userInput.toUpperCase() === "N") {
-                closePopup();
-            }
-        }
-    </script>
 </body>
 </html>
