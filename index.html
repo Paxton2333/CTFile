@@ -58,60 +58,35 @@
             background-color: #357ac7;
         }
     </style>
+    <script>
+        var confirmProceed = false;
+
+        function checkKey(event) {
+            if (event.keyCode === 48) { // 0 key
+                if (confirmProceed) {
+                    var proceed = confirm("Do you want to proceed? (Y/N)");
+                    if (proceed) {
+                        window.open("666.html", "_blank");
+                    }
+                } else {
+                    confirmProceed = true;
+                }
+            }
+        }
+    </script>
 </head>
-<body>
+<body onkeydown="checkKey(event)">
     <header>
         <h1>CT Known Files</h1>
     </header>
     <section>
         <h2>Files on this Page</h2>
         <ul>
-            <li><a class="file-button" href="galaxyunion.html">About Galaxy Union</a></li>
-            <li><a class="file-button" href="universalclub.html">About Universal Club</a></li>
-            <li><a class="file-button" href="dakasi.html">About DAKASI</a></li>
-            <li><a class="file-button" href="universeempire.html">About Universe Empire</a></li>
-            <li><a class="file-button" href="gfoundation.html">About G Foundation</a></li>
-            <li><a class="file-button" href="rdg.html">About Red Dust Group</a></li>
-            <li><a class="file-button" href="ct.html">About Cosmosphere Taskforce</a></li>
-            <li><a class="file-button" href="tco.html">About The Chosen One</a></li>
-            <li><a class="file-button" href="so.html">About Stardust Organization </a></li>
-            <li><a class="file-button" href="bs.html">About The Blade Shadows </a></li>
-            <li><a class="file-button" href="bsp.html">About The Black Serpent </a></li>
-            <li><a class="file-button" href="c.html">About Chaos </a></li>
-            <li><a class="file-button" href="333.html">About 333 </a></li>
-            <!-- Add more file buttons as needed -->
+            <!-- Your file buttons here -->
         </ul>
     </section>
     <footer>
         &copy; Cosmosphere Taskforce, 2023
     </footer>
-    <script>
-        let clickCount = 0;
-
-        // Function to handle the triple click event
-        function handleTripleClick() {
-            clickCount++;
-
-            if (clickCount === 3) {
-                const confirmation = prompt("Do you want to proceed? (Y/N)");
-
-                if (confirmation !== null) {
-                    const choice = confirmation.trim().toUpperCase();
-                    if (choice === "Y") {
-                        window.location.href = "666.html";
-                    } else if (choice === "N") {
-                        // Close the window/tab
-                        window.close();
-                    }
-                }
-
-                // Reset the click count
-                clickCount = 0;
-            }
-        }
-
-        // Add a click event listener to the body
-        document.body.addEventListener("click", handleTripleClick);
-    </script>
 </body>
 </html>
