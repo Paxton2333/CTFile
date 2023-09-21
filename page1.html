@@ -75,29 +75,25 @@
             border-radius: 5px;
             text-align: center;
         }
+        /* Style for the "Go back" button */
+        #go-back-button {
+            background-color: #4a90e2;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        #go-back-button:hover {
+            background-color: #357ac7;
+        }
     </style>
-    <script>
-        var confirmProceed = false;
-
-        function checkKey(event) {
-            if (event.keyCode === 48) { // 0 key
-                if (confirmProceed) {
-                    var popupContainer = document.getElementById("popup-container");
-                    popupContainer.style.display = "flex";
-                } else {
-                    confirmProceed = true;
-                }
-            }
-        }
-
-        function closePopup() {
-            var popupContainer = document.getElementById("popup-container");
-            popupContainer.style.display = "none";
-        }
-    </script>
 </head>
-<body onkeydown="checkKey(event)">
+<body>
     <header>
+        <a id="go-back-button" href="index.html">Go back</a>
         <h1>Page 1</h1>
     </header>
     <section>
