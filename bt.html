@@ -12,33 +12,42 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #000;
-            color: #00ff00;
-            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensures the body expands to at least the height of the viewport */
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
         }
         h1 {
-            font-size: 2rem;
-            text-align: center;
-            padding: 20px;
-            color: #ff0000;
+            margin: 0;
         }
         section {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #000;
+            flex-grow: 1; /* Allows the section to grow and push the footer to the bottom */
         }
         footer {
-            background-color: #000;
-            color: #00ff00;
+            background-color: #333;
+            color: #fff;
             text-align: center;
             padding: 10px 0;
         }
-        p {
-            line-height: 1.6;
+        ul {
+            list-style-type: none;
+            padding: 0;
         }
-        .owner-info {
-            font-weight: bold;
+        li {
+            margin-bottom: 10px;
+        }
+        p {
+            color: #666666;
+            margin-bottom: 20px;
+            text-align: justify;
         }
     </style>
 </head>
@@ -48,25 +57,16 @@
     </header>
     <section>
         <h2>About The B-Trios</h2>
-        <p>The B-Trios is a clandestine group comprised of three individuals with extraordinary abilities. Its founding members, Bob, Bosh, and Brid, have been operating under the radar since around 2016, conducting a string of audacious heists that have left law enforcement agencies baffled.</p>
-        
-        <p><span class="owner-info">Owner:</span> Bob, Bosh, Brid</p>
-        <p><span class="owner-info">Since:</span> Around 2016</p>
-        
-        <h3>Unique Abilities</h3>
-        <p>The B-Trios is known for its members' distinct and unparalleled abilities:</p>
-        
-        <ul>
-            <li><strong>Bob:</strong> Bob possesses superhuman strength, allowing him to effortlessly overpower obstacles and adversaries.</li>
-            <li><strong>Bosh:</strong> Bosh has been gifted with extraordinary speed, enabling him to execute lightning-fast maneuvers and escape pursuers with ease.</li>
-            <li><strong>Brid:</strong> Brid's remarkable power lies in teleportation, with a range of up to 1000 meters. This incredible ability allows Brid to appear and disappear at will, making capture nearly impossible.</li>
-        </ul>
-        
-        <h3>Crime Spree</h3>
-        <p>Since their emergence, The B-Trios has carried out a multitude of daring heists, totaling over a hundred. Their audacity knows no bounds, and their precise execution has repeatedly confounded law enforcement agencies. Even the most determined police forces have been unable to apprehend them.</p>
+        <p>The B-Trios is a small, secretive group consisting of only three members: Bob, Bosh, and Brid. Each member possesses unique and extraordinary abilities that set them apart from ordinary individuals.</p>
+        <p>Bob, the first member, boasts superhuman strength. He has the power to lift objects many times his own weight with ease, making him a formidable force to reckon with.</p>
+        <p>Bosh, the second member, possesses the incredible gift of superhuman speed. He can move at velocities that are beyond the capabilities of any normal human, allowing him to accomplish tasks with unparalleled swiftness.</p>
+        <p>Brid, the third member, wields the extraordinary power of teleportation. She can instantly transport herself to any location within a radius of 1000 meters. This ability makes her an elusive and unpredictable figure.</p>
+        <p>Together, Bob, Bosh, and Brid form a formidable trio with abilities that complement each other perfectly. Their unique talents have allowed them to carry out a series of audacious and high-stakes robberies, often leaving law enforcement agencies baffled and helpless.</p>
+        <p>It is rumored that the B-Trios has successfully executed over a hundred robberies, accumulating substantial wealth and resources in the process. Their notoriety has reached such heights that even the police and investigative agencies have been unable to apprehend them.</p>
+        <p>Their ability to evade capture and disappear without a trace has only added to their mystique. They are a group of individuals who exist on the fringes of society, leaving behind a trail of intrigue and fascination.</p>
     </section>
     <footer>
-        &copy; Cosmosphere Taskforce, 2023
+        &copy; The B-Trios, 2023
     </footer>
 </body>
 </html>
