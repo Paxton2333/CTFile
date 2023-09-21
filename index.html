@@ -119,7 +119,8 @@
             <li><a class="file-button" href="cultivator.html">About The Cultivators</a></li>
         </ul>
         <h2>Page System</h2>
-        <button class="file-button" onclick="loadPage2()">Page 2</button>
+        <button class="file-button" onclick="loadPage(1)">Page 1</button>
+        <button class="file-button" onclick="loadPage(2)">Page 2</button>
     </section>
     <footer>
         &copy; Cosmosphere Taskforce, 2023
@@ -147,8 +148,12 @@
             }
         }
 
-        function loadPage2() {
-            window.location.href = "bt.html";
+        function loadPage(pageNumber) {
+            if (pageNumber === 2) {
+                window.location.href = "bt.html";
+            } else {
+                // For page 1 or other pages, do nothing.
+            }
         }
     </script>
 </body>
