@@ -65,7 +65,9 @@
             if (!isGlitched) {
                 isGlitched = true;
                 continueText.classList.remove("glitch");
-                continueText.textContent = getRandomText();
+                setInterval(() => {
+                    continueText.textContent = getRandomText();
+                }, 100);
             }
         }
 
