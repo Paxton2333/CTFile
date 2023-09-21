@@ -78,10 +78,6 @@
         /* Style for the file buttons of page 2 */
         .file-button-page2 {
             display: none;
-        }
-        /* Style for the page buttons */
-        .page-button {
-            display: inline-block; /* Displayed inline with other buttons */
             padding: 10px 20px;
             background-color: #4a90e2;
             color: #fff;
@@ -89,11 +85,20 @@
             text-decoration: none;
             border-radius: 5px;
             margin-right: 10px;
-            cursor: pointer;
         }
-        /* Style for the active page button */
-        .page-button.active {
-            background-color: #357ac7; /* Active button color */
+        .file-button-page2:hover {
+            background-color: #357ac7;
+        }
+        /* Style for the page buttons */
+        .page-button {
+            background-color: #4a90e2;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
         }
     </style>
     <script>
@@ -128,10 +133,6 @@
                 fileButtonsPage2.forEach(function(button) {
                     button.style.display = "inline-block";
                 });
-
-                // Highlight the Page 2 button
-                document.querySelector(".page-button.active").classList.remove("active");
-                document.querySelector(".page-button[data-page='2']").classList.add("active");
             } else {
                 // Show file buttons of page 1
                 var fileButtonsPage1 = document.querySelectorAll(".file-button");
@@ -144,10 +145,6 @@
                 fileButtonsPage2.forEach(function(button) {
                     button.style.display = "none";
                 });
-
-                // Highlight the Page 1 button
-                document.querySelector(".page-button.active").classList.remove("active");
-                document.querySelector(".page-button[data-page='1']").classList.add("active");
             }
         }
     </script>
@@ -175,8 +172,10 @@
             <li><a class="file-button" href="cultivator.html">About The Cultivators</a></li>
         </ul>
         <!-- Page buttons -->
-        <button class="page-button active" data-page="1" onclick="loadPage(1)">Page 1</button>
-        <button class="page-button" data-page="2" onclick="loadPage(2)">Page 2</button>
+        <button class="page-button" onclick="loadPage(1)">Page 1</button>
+        <button class="page-button" onclick="loadPage(2)">Page 2</button>
+        <!-- "About B-Trios" button on Page 2 -->
+        <li><a class="file-button-page2" href="bt.html">About B-Trios</a></li>
     </section>
     <footer>
         &copy; Cosmosphere Taskforce, 2023
