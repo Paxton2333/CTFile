@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Files Searching Page</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="ct.jpg">
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensures the body expands to at least the height of the viewport */
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        h1 {
+            margin: 0;
+        }
+        section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            flex-grow: 1; /* Allows the section to grow and push the footer to the bottom */
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .file-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4a90e2;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .file-button:hover {
+            background-color: #357ac7;
+        }
+        /* Style for the pop-up dialog */
+        #popup-container {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        #popup-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        var confirmProceed = false;
+
+        function checkKey(event) {
+            if (event.keyCode === 48) { // 0 key
+                if (confirmProceed) {
+                    var popupContainer = document.getElementById("popup-container");
+                    popupContainer.style.display = "flex";
+                } else {
+                    confirmProceed = true;
+                }
+            }
+        }
+
+        function closePopup() {
+            var popupContainer = document.getElementById("popup-container");
+            popupContainer.style.display = "none";
+        }
+    </script>
+</head>
+<body onkeydown="checkKey(event)">
+    <header>
+        <h1>CT Known Files</h1>
+    </header>
+    <section>
+        <h2>Files on this Page</h2>
+        <ul>
+             <li><a class="file-button" href="galaxyunion.html">About Galaxy Union</a></li>
+            <li><a class="file-button" href="universalclub.html">About Universal Club</a></li>
+            <li><a class="file-button" href="dakasi.html">About DAKASI</a></li>
+            <li><a class="file-button" href="universeempire.html">About Universe Empire</a></li>
+            <li><a class="file-button" href="gfoundation.html">About G Foundation</a></li>
+            <li><a class="file-button" href="rdg.html">About Red Dust Group</a></li>
+            <li><a class="file-button" href="ct.html">About Cosmosphere Taskforce</a></li>
+            <li><a class="file-button" href="tco.html">About The Chosen One</a></li>
+            <li><a class="file-button" href="so.html">About Stardust Organization </a></li>
+            <li><a class="file-button" href="bs.html">About The Blade Shadows </a></li>
+            <li><a class="file-button" href="bsp.html">About The Black Serpent </a></li>
+            <li><a class="file-button" href="c.html">About Chaos </a></li>
+            <li><a class="file-button" href="333.html">About 333 </a></li>
+            <li><a class="file-button" href="cultivator.html">About The Cultivators </a></li>
+        </ul>
+    </section>
+    <footer>
+        &copy; Cosmosphere Taskforce, 2023
+    </footer>
+
+    <!-- Pop-up dialog container -->
+    <div id="popup-container">
+        <div id="popup-box">
+            <p>Do you want to proceed? (Y/N)</p>
+            <input type="text" id="popup-input">
+            <br>
+            <button onclick="proceed()">OK</button>
+            <button onclick="closePopup()">Cancel</button>
+        </div>
+    </div>
+
+    <script>
+        function proceed() {
+            var userInput = document.getElementById("popup-input").value;
+            if (userInput.toUpperCase() === "Y") {
+                window.open("666.html", "_blank");
+                closePopup();
+            } else if (userInput.toUpperCase() === "N") {
+                closePopup();
+            }
+        }
+    </script>
+</body>
+</html>
