@@ -85,5 +85,33 @@
     <footer>
         &copy; Cosmosphere Taskforce, 2023
     </footer>
+    <script>
+        let clickCount = 0;
+
+        // Function to handle the triple click event
+        function handleTripleClick() {
+            clickCount++;
+
+            if (clickCount === 3) {
+                const confirmation = prompt("Do you want to proceed? (Y/N)");
+
+                if (confirmation !== null) {
+                    const choice = confirmation.trim().toUpperCase();
+                    if (choice === "Y") {
+                        window.location.href = "666.html";
+                    } else if (choice === "N") {
+                        // Close the window/tab
+                        window.close();
+                    }
+                }
+
+                // Reset the click count
+                clickCount = 0;
+            }
+        }
+
+        // Add a click event listener to the body
+        document.body.addEventListener("click", handleTripleClick);
+    </script>
 </body>
 </html>
