@@ -75,6 +75,21 @@
             border-radius: 5px;
             text-align: center;
         }
+        /* Style for the file buttons of page 2 */
+        .file-button-page2 {
+            display: none;
+        }
+        /* Style for the page buttons */
+        .page-button {
+            background-color: #4a90e2;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
     </style>
     <script>
         var confirmProceed = false;
@@ -93,6 +108,24 @@
         function closePopup() {
             var popupContainer = document.getElementById("popup-container");
             popupContainer.style.display = "none";
+        }
+
+        function loadPage(pageNumber) {
+            if (pageNumber === 2) {
+                // Hide file buttons of page 1
+                var fileButtonsPage1 = document.querySelectorAll(".file-button");
+                fileButtonsPage1.forEach(function(button) {
+                    button.style.display = "none";
+                });
+
+                // Show file buttons of page 2
+                var fileButtonsPage2 = document.querySelectorAll(".file-button-page2");
+                fileButtonsPage2.forEach(function(button) {
+                    button.style.display = "inline-block";
+                });
+            } else {
+                // For page 1 or other pages, do nothing.
+            }
         }
     </script>
 </head>
@@ -118,9 +151,9 @@
             <li><a class="file-button" href="333.html">About 333</a></li>
             <li><a class="file-button" href="cultivator.html">About The Cultivators</a></li>
         </ul>
-        <h2>Page System</h2>
-        <button class="file-button" onclick="loadPage(1)">Page 1</button>
-        <button class="file-button" onclick="loadPage(2)">Page 2</button>
+        <!-- Page buttons -->
+        <button class="page-button" onclick="loadPage(1)">Page 1</button>
+        <button class="page-button" onclick="loadPage(2)">Page 2</button>
     </section>
     <footer>
         &copy; Cosmosphere Taskforce, 2023
@@ -136,25 +169,5 @@
             <button onclick="closePopup()">Cancel</button>
         </div>
     </div>
-
-    <script>
-        function proceed() {
-            var userInput = document.getElementById("popup-input").value;
-            if (userInput.toUpperCase() === "Y") {
-                window.open("666.html", "_blank");
-                closePopup();
-            } else if (userInput.toUpperCase() === "N") {
-                closePopup();
-            }
-        }
-
-        function loadPage(pageNumber) {
-            if (pageNumber === 2) {
-                window.location.href = "bt.html";
-            } else {
-                // For page 1 or other pages, do nothing.
-            }
-        }
-    </script>
 </body>
 </html>
