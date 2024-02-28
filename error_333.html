@@ -34,12 +34,27 @@
             line-height: 1.6;
             color: red; /* Set text color to red */
         }
+        a {
+            color: #fff; /* Set link color to white */
+            text-decoration: underline; /* Underline the link */
+            cursor: pointer; /* Change cursor to pointer on hover */
+        }
+        a:hover {
+            color: #ff0000; /* Change link color to red on hover */
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>ERROR_333</h1>
         <p>YOU KNOW TOO MUCH</p>
+        <p><a onclick="closeTab();" href="#">You shouldn't know too much...</a></p>
     </div>
+
+    <script>
+        function closeTab() {
+            window.close(); // Close the current tab
+        }
+    </script>
 </body>
 </html>
