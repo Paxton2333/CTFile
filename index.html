@@ -126,7 +126,10 @@
         <button class="login-button" onclick="login()">Login</button>
     </div>
 
+    <!-- Script -->
     <script>
+        var keyPressCount = 0;
+
         function showLogin() {
             var loginContainer = document.getElementById("login-container");
             loginContainer.style.display = "block";
@@ -142,6 +145,17 @@
                 alert("Wrong Username/Password");
             }
         }
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "6") {
+                keyPressCount++;
+                if (keyPressCount === 3) {
+                    window.location.href = "aftermath.html";
+                }
+            } else {
+                keyPressCount = 0; // Reset the count if any other key is pressed
+            }
+        });
     </script>
 </body>
 </html>
