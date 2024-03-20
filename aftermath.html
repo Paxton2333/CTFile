@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>666</title>
+<style>
+  body {
+    background-color: black;
+    color: red;
+    font-family: 'Creepy Font', cursive;
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  .background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
+</style>
+</head>
+<body>
+<audio autoplay loop>
+  <source src="aftermath.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<div class="background-image"></div>
+<script>
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function spawnImage() {
+    var img = document.createElement('img');
+    img.src = 'eye.gif';
+    img.style.position = 'absolute';
+    img.style.left = getRandomInt(0, window.innerWidth - 100) + 'px';
+    img.style.top = getRandomInt(0, window.innerHeight - 100) + 'px';
+    document.body.appendChild(img);
+    setTimeout(function() {
+      img.remove();
+    }, 1000);
+  }
+
+  setInterval(spawnImage, 500);
+</script>
+<p><strong>IS THIS WORTH IT?</strong></p>
+<p><strong>ARE YOU SATISFIED?</strong></p>
+<p><strong>I CAN SEE YOU</strong></p>
+<p><strong>ERROR_333</strong></p>
+</body>
+</html>
